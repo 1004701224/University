@@ -37,6 +37,7 @@ public class ValidCode extends HttpServlet{
 		for(int i = 0; i < 4; i++) {
 			number.add(random.nextInt(10));
 		}
+//		ÉèÖÃ»æÍ¼ÑÕÉ«
 		gra.setFont(new Font("ËÎÌå",Font.ITALIC|Font.BOLD,40));
 		Color[] color = {Color.black,Color.blue,Color.gray,Color.green,Color.red,Color.pink,Color.orange,Color.yellow,Color.magenta};
 		for(int i = 0; i < 4; i++) {

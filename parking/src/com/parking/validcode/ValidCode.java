@@ -33,6 +33,7 @@ public class ValidCode extends HttpServlet{
 //		创建数字列表，用于存储生成的验证码
 		List<Integer> number = new ArrayList<Integer>();
 		Random random = new Random();
+//		随机生成4位数验证码
 		for(int i = 0; i < 4; i++) {
 			number.add(random.nextInt(10));
 		}

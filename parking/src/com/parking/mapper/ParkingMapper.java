@@ -11,8 +11,8 @@ public interface ParkingMapper {
 //	查询全部车辆信息
 	@Select("select * from parking")
 	List<Parking> parking();
-//	按指定车牌号查询车辆信息
-	@Select("select * from parking where name = #{0}")
+//	按指定车牌号查询车辆信息（模糊查询）
+	@Select("select * from parking where name like concat('%',#{0},'%')")
 	List<Parking> parkings(String name);
 	
 }

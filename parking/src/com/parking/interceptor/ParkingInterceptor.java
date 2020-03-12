@@ -32,6 +32,8 @@ public class ParkingInterceptor implements HandlerInterceptor{
 //		调取session中的登录对象，若未设置此对象，为未登录，页面跳转到登录页面
 		Object users = req.getSession().getAttribute("users");
 		if(users != null) {
+			req.setCharacterEncoding("utf-8");
+			res.setCharacterEncoding("utf-8");
 //			session中存在登录对象，已登录成功，拦截器不对controller进行拦截，允许进行主页面访问
 			return true;
 		}

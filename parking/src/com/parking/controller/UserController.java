@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.websocket.Session;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,8 +24,9 @@ public class UserController {
 	@RequestMapping("login")
 	private String login(String name, String password, String num, HttpServletRequest req) {
 		System.out.println(name + " " + password);
-		String number = (String) req.getSession().getAttribute("number");
-
+		String number = (String)req.getSession().getAttribute("number");
+		
+//		浏览器访问的时候会存在缓存，导致num变量为空报错
 		// 由登录页面传入用户名，密码，验证码信息，进行比对，验证码非空测试
 		if (num != "" && num != null) {
 			// 验证码非空，比对验证码输入是否有误

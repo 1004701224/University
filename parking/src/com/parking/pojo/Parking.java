@@ -1,5 +1,5 @@
 package com.parking.pojo;
-
+//车辆信息类
 public class Parking {
 	private int id;
 	private String name;

@@ -1,5 +1,5 @@
 package com.parking.pojo;
-
+//管理员信息类
 public class User {
 	private int id;
 	private String name;

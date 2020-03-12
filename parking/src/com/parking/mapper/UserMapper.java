@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 import com.parking.pojo.User;
-
+//管理员mapper，交由mybatis进行注入
 public interface UserMapper {
 //	查询数据库中管理员信息，登录使用
 	@Select("select * from admin where name = #{0} and passwd =  #{1}")

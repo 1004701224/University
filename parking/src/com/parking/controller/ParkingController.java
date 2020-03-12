@@ -12,9 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.parking.pojo.Parking;
 import com.parking.service.ParkingService;
-import com.parking.service.impl.ParkingServiceImpl;
-import com.sun.jndi.url.iiopname.iiopnameURLContextFactory;
-import com.sun.org.apache.xerces.internal.parsers.IntegratedParserConfiguration;
 //主界面控制器
 @Controller
 public class ParkingController {

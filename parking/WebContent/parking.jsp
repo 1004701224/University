@@ -23,6 +23,7 @@
 </c:forEach>
 <a href="delete.jsp">注销用户</a>
 <a href="update.jsp">修改密码</a>
+<a href="parkingadd.jsp">车辆入场</a>
 </table>
 <form action="select" method="post">
 请输入车牌号：<input type="text" name="name">

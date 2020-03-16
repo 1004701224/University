@@ -30,5 +30,13 @@ public class ParkingServiceImpl implements ParkingService{
 	public List<Parking> parking() {
 		return parkingmapper.parking();
 	}
+	@Override
+	public int parkingdelete(int id) {
+		return parkingmapper.parkingdelete(id);
+	}
+	@Override
+	public int parkingadd(String name, String date) {
+		return parkingmapper.parkingadd(name, date);
+	}
 
 }

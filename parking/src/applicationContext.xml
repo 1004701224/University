@@ -45,6 +45,8 @@
         		<tx:method name="userregister" read-only="false" rollback-for="Exception"/>
         		<tx:method name="userdelete" read-only="false" rollback-for="Exception"/>
         		<tx:method name="userupdate" read-only="false" rollback-for="Exception"/>
+        		<tx:method name="parkingdelete" read-only="false" rollback-for="Exception"/>
+        		<tx:method name="parkingadd" read-only="false" rollback-for="Exception"/>
         	</tx:attributes>
         </tx:advice>
         <aop:config>

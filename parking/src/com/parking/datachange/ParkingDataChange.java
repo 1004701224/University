@@ -7,7 +7,7 @@ import java.util.List;
 import com.parking.pojo.Parking;
 
 public class ParkingDataChange {
-	public static void dataChange(List<Parking> parking) {
+	public static void outdataChange(List<Parking> parking) {
 		for(int i = 0; i < parking.size();i++) {
 			int moneyflag = 0;
 //			读取当前时间
@@ -15,14 +15,14 @@ public class ParkingDataChange {
 //			获取返回list集合中的每一项数据加以修改
 			Parking flag = parking.get(i);
 //			按指定格式设置开始结束时间（以小时分钟秒各两位显示）
-			String begin = flag.getBegintime();
-			int hour = Integer.parseInt(begin.substring(0, 2));
-			int minute = Integer.parseInt(begin.substring(2, 4));
-			int second = Integer.parseInt(begin.substring(4, 6));
 			SimpleDateFormat df = new SimpleDateFormat("HH:mm:ss");
 			int nowhour = Integer.parseInt(df.format(date).substring(0,2));
 			int nowminute = Integer.parseInt(df.format(date).substring(3,5));
 			int nowsecond = Integer.parseInt(df.format(date).substring(6,8));
+			String begin = flag.getBegintime();
+			int hour = Integer.parseInt(begin.substring(0, 2));
+			int minute = Integer.parseInt(begin.substring(2, 4));
+			int second = Integer.parseInt(begin.substring(4, 6));
 			String begintime = String.format("%1$02d", hour)+":"+String.format("%1$02d", minute)+":"+String.format("%1$02d", second);
 			String endtime = String.format("%1$02d", nowhour)+":"+String.format("%1$02d", nowminute)+":"+String.format("%1$02d", nowsecond);
 //			判断停车总时长（有小时显示小时，不足一小时从分钟开始显示），并计算出应缴金额
@@ -83,6 +83,14 @@ public class ParkingDataChange {
 			flag.setEndtime(endtime);
 			flag.setAlltime(alltime);
 		}
+	}
+	public static String nowDate() {
+		Date date = new Date();
+		SimpleDateFormat df = new SimpleDateFormat("HH:mm:ss");
+		int nowhour = Integer.parseInt(df.format(date).substring(0,2));
+		int nowminute = Integer.parseInt(df.format(date).substring(3,5));
+		int nowsecond = Integer.parseInt(df.format(date).substring(6,8));
+		return ""+nowhour+""+nowminute+""+nowsecond;
 	}
 
 }

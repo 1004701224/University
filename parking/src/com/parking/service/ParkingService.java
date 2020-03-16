@@ -9,4 +9,8 @@ public interface ParkingService {
 	List<Parking>parking();
 //	按指定车牌号查询车辆信息
 	List<Parking>parkings(String name);
+//	车辆出场
+	int parkingdelete(int id);
+//	车辆入场
+	int parkingadd(String name,String date);
 }

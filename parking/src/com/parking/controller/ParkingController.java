@@ -40,7 +40,7 @@ public class ParkingController {
 //		查询数据库的车辆信息，对其中的数据进行操作
 		parking = ParkingServiceImpl.parking();
 //		修改查询到的信息，按指定格式重新写入
-		ParkingDataChange.outdataChange(parking);
+		ParkingDataChange.indataChange(parking);
 		req.setAttribute("parking", parking);
 		return "parking.jsp";
 	}
@@ -63,6 +63,7 @@ public class ParkingController {
 //		获取get中随URL传入的id值，判断出删除对象，对数据库删除操作，并打印记录到日志中
 		for(int i = 0; i < parking.size(); i++) {
 			if(parking.get(i).getId() == id) {
+				ParkingDataChange.outdataChange(parking.get(i));
 				if(ParkingServiceImpl.parkingdelete(id)>0) {
 					Logger logger = Logger.getLogger(ParkingController.class);
 					logger.warn(parking.get(i).toString());
@@ -77,7 +78,7 @@ public class ParkingController {
 	private String parkingselect(String name,HttpServletRequest req,HttpServletResponse resp) {
 		System.out.println(name);
 		parking = ParkingServiceImpl.parkings(name);
-		ParkingDataChange.outdataChange(parking);
+		ParkingDataChange.indataChange(parking);
 		req.setAttribute("parking", parking);
 		return "parking.jsp";
 	}

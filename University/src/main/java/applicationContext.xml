@@ -19,7 +19,7 @@
         <!-- 配置数据库连接 -->
         <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         	<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-        	<property name="url" value="jdbc:mysql://localhost:3306/ssm"></property>
+        	<property name="url" value="jdbc:mysql://localhost:3306/university?useUnicode=true&amp;characterEncoding=utf8"></property>
         	<property name="username" value="root"></property>
         	<property name="password" value=""></property>
         </bean>

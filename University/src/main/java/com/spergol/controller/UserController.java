@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.spergol.service.impl.UserServiceImpl;
+import com.spergol.service.UserService;
 
 /*
  * 中心控制器，主要逻辑在这里写，相当于servlet
@@ -21,11 +21,14 @@ import com.spergol.service.impl.UserServiceImpl;
  * */
 @Controller
 public class UserController {
+	
 	@Resource
-	private UserServiceImpl userServiceImpl;
-	@RequestMapping("")
+	private UserService UserServiceImpl;
+	
+	@RequestMapping("login")
 	@ResponseBody
 	private String login() {
-		return "";
+		System.out.println("123");
+		return "456";
 	}
 }

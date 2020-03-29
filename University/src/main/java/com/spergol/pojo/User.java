@@ -5,13 +5,14 @@ package com.spergol.pojo;
 //即为从数据库中查出的类型
 
 public class User {
-	private int id;
+	private String id;
 	private String name;
-	private String password;
-	public int getId() {
+	private int money;
+	private int school;
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getName() {
@@ -20,11 +21,17 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getPassword() {
-		return password;
+	public int getMoney() {
+		return money;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setMoney(int money) {
+		this.money = money;
+	}
+	public int getSchool() {
+		return school;
+	}
+	public void setSchool(int school) {
+		this.school = school;
 	}
 	
 }

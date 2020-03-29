@@ -22,10 +22,43 @@ public class UserServiceImpl implements UserService{
 	@Resource
 	private UserMapper userMapper;
 
+//	生成get，set方法，使依赖注入生效
+	public UserMapper getUserMapper() {
+		return userMapper;
+	}
+
+	public void setUserMapper(UserMapper userMapper) {
+		this.userMapper = userMapper;
+	}
+
 	@Override
-	public List<User> selectUser(int id) {
+	public List<User> selectUser(String userid) {
 		// TODO 自动生成的方法存根
-		return userMapper.selectUsers(id);
+		return userMapper.selectUsers(userid);
+	}
+
+	@Override
+	public int addUsers(String userid, String username, int money, int school) {
+		// TODO 自动生成的方法存根
+		return userMapper.addUsers(userid, username, money, school);
+	}
+
+	@Override
+	public int updmoney(String userid, int money) {
+		// TODO 自动生成的方法存根
+		return userMapper.updmoney(userid, money);
+	}
+
+	@Override
+	public int updschool(String userid, int school) {
+		// TODO 自动生成的方法存根
+		return userMapper.updschool(userid, school);
+	}
+
+	@Override
+	public int updusername(String userid, String username) {
+		// TODO 自动生成的方法存根
+		return userMapper.updusername(userid, username);
 	}
 	
 	

@@ -12,6 +12,7 @@
 		    <version>5.2.5.RELEASE</version>
 		</dependency>
   	
+  	
 		<dependency>
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-webmvc</artifactId>
@@ -41,6 +42,17 @@
 		    <version>3.5.4</version>
 		</dependency>
   
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jdbc</artifactId>
+		    <version>5.2.5.RELEASE</version>
+		</dependency>
+  		
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>5.1.30</version>
+		</dependency>
   
   
   </dependencies>

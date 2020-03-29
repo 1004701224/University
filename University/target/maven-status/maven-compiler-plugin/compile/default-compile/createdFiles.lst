@@ -1,0 +1,5 @@
+com\spergol\service\UserService.class
+com\spergol\controller\UserController.class
+com\spergol\service\impl\UserServiceImpl.class
+com\spergol\pojo\User.class
+com\spergol\mapper\UserMapper.class

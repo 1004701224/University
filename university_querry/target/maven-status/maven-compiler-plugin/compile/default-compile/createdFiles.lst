@@ -1,0 +1,6 @@
+entity\User.class
+mapper\UserMapper.class
+service\impl\UserServiceImpl.class
+servlet\UserServlet.class
+entity\School.class
+service\UserService.class

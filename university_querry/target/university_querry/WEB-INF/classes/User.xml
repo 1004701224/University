@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace:该mapper.xml映射文件的唯一标识 -->
+<mapper namespace="mapper.UserMapper">
+    <!-- 通过namespace.id确定select -->
+
+    <!-- parameterType:输入参数的类型
+         resultType： 查询返回结果值的类型 ， 返回类型
+     -->
+    <!-- 查询学校 -->
+    <select id="queryStudentByUserId" parameterType="String" resultType="School">
+		select schoolname from school where id = (select school from user where userid = #{userid})
+	</select>
+
+
+</mapper>

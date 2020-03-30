@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ae31b396-e721-4499-9d10-9de1ad9bd194" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="FxmlFile" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Zpd289003QO7jI5MWvh21imi4e" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="D:/Tomcat/apache-tomcat-9.0.24-windows-x64/apache-tomcat-9.0.24/lib/servlet-api.jar!/" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="K:\微信小程序大赛\university_querry\src\main\resources" />
+      <recent name="K:\微信小程序大赛\university_querry\src\main\java" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="K:\微信小程序大赛\university_querry\src\main\java" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ae31b396-e721-4499-9d10-9de1ad9bd194" name="Default Changelist" comment="" />
+      <created>1585539759507</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585539759507</updated>
+      <workItem from="1585539762550" duration="10904000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="361" y="106" key="#Project_Structure" timestamp="1585539956353">
+      <screen x="0" y="30" width="1536" height="834" />
+    </state>
+    <state x="361" y="106" key="#Project_Structure/0.30.1536.834@0.30.1536.834" timestamp="1585539956353" />
+    <state x="574" y="157" key="#com.intellij.ide.util.MemberChooser" timestamp="1585543146915">
+      <screen x="0" y="30" width="1536" height="834" />
+    </state>
+    <state x="574" y="157" key="#com.intellij.ide.util.MemberChooser/0.30.1536.834@0.30.1536.834" timestamp="1585543146915" />
+    <state x="445" y="188" key="FileChooserDialogImpl" timestamp="1585543314508">
+      <screen x="0" y="30" width="1536" height="834" />
+    </state>
+    <state x="445" y="188" key="FileChooserDialogImpl/0.30.1536.834@0.30.1536.834" timestamp="1585543314508" />
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1585556277341">
+      <screen x="0" y="30" width="1536" height="834" />
+    </state>
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.30.1536.834@0.30.1536.834" timestamp="1585556277341" />
+    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1585556277341">
+      <screen x="0" y="30" width="1536" height="834" />
+    </state>
+    <state width="1493" height="213" key="GridCell.Tab.0.center/0.30.1536.834@0.30.1536.834" timestamp="1585556277341" />
+    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1585556277341">
+      <screen x="0" y="30" width="1536" height="834" />
+    </state>
+    <state width="1493" height="213" key="GridCell.Tab.0.left/0.30.1536.834@0.30.1536.834" timestamp="1585556277341" />
+    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1585556277341">
+      <screen x="0" y="30" width="1536" height="834" />
+    </state>
+    <state width="1493" height="213" key="GridCell.Tab.0.right/0.30.1536.834@0.30.1536.834" timestamp="1585556277341" />
+    <state x="249" y="30" key="SettingsEditor" timestamp="1585543998094">
+      <screen x="0" y="30" width="1536" height="834" />
+    </state>
+    <state x="249" y="30" key="SettingsEditor/0.30.1536.834@0.30.1536.834" timestamp="1585543998094" />
+    <state x="178" y="142" key="new project wizard" timestamp="1585539893411">
+      <screen x="0" y="30" width="1536" height="834" />
+    </state>
+    <state x="178" y="142" key="new project wizard/0.30.1536.834@0.30.1536.834" timestamp="1585539893411" />
+  </component>
+</project>

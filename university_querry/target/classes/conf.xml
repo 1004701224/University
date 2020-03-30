@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<properties resource="db.properties"></properties>
+	
+	<!-- 
+		<settings>
+			<setting name="cacheEnabled" value="false"/>
+			<setting name="lazyloadingEnabled" value="false"/>
+		</settings>
+	-->
+	
+	<!-- 设置单个/多个别名 -->
+	<typeAliases>
+		<!-- 设置单个别名(别名 忽略大小写)
+			<typeAlias type="entity.Student" alias="student" />
+		-->
+		<!-- 批量定义别名（别名忽略大小写） ， 以下会自动将该包中的所有类  批量定义别名   ：  别名就是类名（不带包名 ， 忽略大小写） -->
+		<package name="entity"/>
+	</typeAliases>
+
+	<!--
+	<typeHandlers>
+		<typeHandler handler="converter.BooleanAndIntConverter" javaType="Boolean" jdbcType="INTEGER" />
+	</typeHandlers>
+
+	-->
+	
+	<!-- 通过environments的default值和environment的id 来指定MyBatis运行时的数据库环境 -->
+	 <environments default="development">
+		 <!-- 开发环境（自己的计算机） -->
+		 <environment id="development">
+		 	
+		 	<!-- 
+		 	
+		 		JDBC:利用JDBC方式处理事务
+		 		MANAGED: 将事物交于其他组件去托管（spring，jobss） ， 默认会关闭连接.
+		 		
+		 		// 设置默认不关闭连接
+		 		<transactionManager type="MANAGED"/>
+		 		<property name="closeConnection" value="false"/>	
+		 			 	
+		 	 -->
+		 
+			 <transactionManager type="JDBC"/>
+			 	
+			 	<!-- 数据源类型: -->
+			 	<!-- 
+			 		UNPOOLED: 传统的JDBC模式（每次访问数据库均需要打开关闭数据库 ， 但是每次打开关闭数据库很费性能 ， 因此不推荐使用）
+			 		JNDI: 从tomcat中获取内置的数据库连接池（数据库连接池-数据源）
+			 		POOLED: 使用数据库连接池
+			 	-->
+				 <dataSource type="POOLED">
+				 <!-- 配置数据库信息 -->
+					 <property name="driver" value="${driver}"/>
+					 <property name="url" value="${url}"/>
+					 <property name="username" value="${username}"/>
+					 <property name="password" value="${password}"/>
+				 </dataSource>
+		 </environment>
+		 <!-- 真正的项目应该在发布的那台计算机上面运行 -->
+		 <environment id="tomcat">
+			 <transactionManager type="JDBC"/>
+				 <dataSource type="POOLED">
+				 <!-- 配置数据库信息 -->
+					 <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+					 <property name="url" value="jdbc:mysql://59.110.237.22:3306/test?serverTimezone=UTC"/>
+					 <property name="username" value="root"/>
+					 <property name="password" value="123456"/>
+				 </dataSource>
+		 </environment>
+		 
+	 </environments>
+	 <mappers>
+	 <!-- 配置映射文件 -->
+	 	<mapper resource="User.xml"/>
+	 </mappers>
+</configuration>

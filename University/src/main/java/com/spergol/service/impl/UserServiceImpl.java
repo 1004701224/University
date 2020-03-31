@@ -38,9 +38,9 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public int addUsers(String userid, String username, int money, int school) {
+	public int addUsers(String userid, String username, int money) {
 		// TODO 自动生成的方法存根
-		return userMapper.addUsers(userid, username, money, school);
+		return userMapper.addUsers(userid, username, money);
 	}
 
 	@Override

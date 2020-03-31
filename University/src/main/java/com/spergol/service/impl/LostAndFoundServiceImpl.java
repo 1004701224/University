@@ -14,6 +14,17 @@ public class LostAndFoundServiceImpl implements LostAndFoundService{
 
 	@Resource
 	private LostAndFoundMapper lostAndFoundMapper;
+	
+
+	public LostAndFoundMapper getLostAndFoundMapper() {
+		return lostAndFoundMapper;
+	}
+
+
+	public void setLostAndFoundMapper(LostAndFoundMapper lostAndFoundMapper) {
+		this.lostAndFoundMapper = lostAndFoundMapper;
+	}
+
 
 	@Override
 	public List<LostAndFound> selLAF() {

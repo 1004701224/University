@@ -18,8 +18,8 @@ public interface UserMapper {
 	List<User> selectUsers(String id);
 	
 //	用户首次登录使用
-	@Insert("insert into user values(#{0},#{1},#{2},default)")
-	int addUsers(String userid,String username,int money,int school);
+	@Insert("insert into user values(#{arg0},#{arg1},#{arg2},default)")
+	int addUsers(String userid,String username,int money);
 	
 //	用户余额修改(以下三个应该可以写成一条)
 	@Update("update user set money = #{1} where userid = #{0}")

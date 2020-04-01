@@ -14,7 +14,7 @@ import com.spergol.pojo.User;
  * */
 public interface UserMapper {
 //	用户信息查询
-	@Select("select * from university where id = #{0}")
+	@Select("select * from user where userid = #{arg0}")
 	List<User> selectUsers(String id);
 	
 //	用户首次登录使用

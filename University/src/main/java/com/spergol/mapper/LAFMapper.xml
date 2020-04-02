@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.spergol.mapper.LAFMapper.xml">
+  		<update id="updLAF" parameterType="lostandfound" >
+  			update lostfound
+  			<set>
+  				<if test="username!=null and username!=''">
+  					username = #{username}
+  				</if>
+  				<if test="attentionnumber!=null and attentionnumber!=''">
+  					attentionnumber = #{attentionnumber}
+  				</if>
+  				<if test="telephone!=null and telephone!=''">
+  					telephone = #{telephone}
+  				</if>
+  				<if test="name!=null and name!=''">
+  					name = #{name}
+  				</if>
+  				<if test="lftime!=null and lftime!=''">
+  					lftime = #{lftime}
+  				</if>
+  				<if test="map!=null and map!=''">
+  					map = #{map}
+  				</if>
+				<if test="flag!=null and flag!=''">
+					flag = #{flag}
+				</if>
+				<if test="attention!=null and attention!=''">
+					attention = #{attention}
+				</if>
+				<if test="money!=null and money!=''">
+					money = #{money}
+				</if>
+				<if test="school!=null and school!=''">
+					school = #{school}
+				</if>
+  			</set>
+  			where id = #{id}
+  		</update>
+  		
+  		<select id="selLAFById" resultType="lostandfound">
+  			select * from lostfound where id = #{id}
+  			<if test="userid!=null and userid!=''">
+  				and userid like concat("%",#{userid},"%")
+  			</if>
+  		</select>
+  </mapper>

@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public List<User> selectUser(String userid) {
+	public User selectUser(String userid) {
 		// TODO 自动生成的方法存根
 		return userMapper.selectUsers(userid);
 	}

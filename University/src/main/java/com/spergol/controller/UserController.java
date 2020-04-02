@@ -77,15 +77,18 @@ public class UserController {
 		System.out.println(token);
 		JSONObject jObject = JSONObject.fromObject(token);
 		String userid = jObject.getString("openid");
+		req.getSession().setAttribute("userid", userid);
 		
 		
 //		取到userID，判断用户是否存在
 //		若存在，查出用户，返回值按前端要求返回
 //		若不存在，新建用户，写入名称及userID
-		if(!UserServiceImpl.selectUser(userid).isEmpty()) {
+		User user = UserServiceImpl.selectUser(userid);
+		if(user!=null) {
 			try {
-				resp.getWriter().print("用户已存在");
-				System.out.println(UserServiceImpl.selectUser(userid).toString());
+				resp.getWriter().println("用户已存在");
+				resp.getWriter().println("用户名："+user.getName()+"剩余金额："+user.getMoney()+"所属学校"+user.getSchool());
+				
 			} catch (IOException e) {
 				// TODO 自动生成的 catch 块
 				e.printStackTrace();
@@ -93,7 +96,7 @@ public class UserController {
 		}else {
 			if(UserServiceImpl.addUsers(userid, username, money)>0) {
 				try {
-					resp.getWriter().print("1");
+					resp.getWriter().print("第一次登陆，注册成功！");
 				} catch (IOException e) {
 					// TODO 自动生成的 catch 块
 					e.printStackTrace();
@@ -107,6 +110,66 @@ public class UserController {
 				}
 			}
 			
+		}
+	}
+	
+	@RequestMapping("change")
+	public void change(HttpServletRequest req,HttpServletResponse resp) {
+		String userid = (String) req.getSession().getAttribute("userid");
+		String username = req.getParameter("username");
+		String school = req.getParameter("school");
+		String money = req.getParameter("money");
+		
+		if(username != null && username != "") {
+			if(UserServiceImpl.updusername(userid, username)>0) {
+				try {
+					resp.getWriter().println("1");
+				} catch (IOException e) {
+					// TODO 自动生成的 catch 块
+					e.printStackTrace();
+				}
+			}else {
+				try {
+					resp.getWriter().println("0");
+				} catch (IOException e) {
+					// TODO 自动生成的 catch 块
+					e.printStackTrace();
+				}
+			}
+			
+		}else if(school != null && school != "") {
+			if(UserServiceImpl.updschool(userid, Integer.parseInt(school))>0) {
+				try {
+					resp.getWriter().println("1");
+				} catch (IOException e) {
+					// TODO 自动生成的 catch 块
+					e.printStackTrace();
+				}
+			}else {
+				try {
+					resp.getWriter().println("0");
+				} catch (IOException e) {
+					// TODO 自动生成的 catch 块
+					e.printStackTrace();
+				}
+			}
+			
+		}else if(money != null && money != "") {
+			if(UserServiceImpl.updmoney(userid, Integer.parseInt(money))>0) {
+				try {
+					resp.getWriter().println("1");
+				} catch (IOException e) {
+					// TODO 自动生成的 catch 块
+					e.printStackTrace();
+				}
+			}else {
+				try {
+					resp.getWriter().println("0");
+				} catch (IOException e) {
+					// TODO 自动生成的 catch 块
+					e.printStackTrace();
+				}
+			}
 		}
 	}
 }

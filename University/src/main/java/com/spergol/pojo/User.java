@@ -6,7 +6,7 @@ package com.spergol.pojo;
 
 public class User {
 	private String id;
-	private String name;
+	private String username;
 	private int money;
 	private int school;
 	public String getId() {
@@ -16,10 +16,10 @@ public class User {
 		this.id = id;
 	}
 	public String getName() {
-		return name;
+		return username;
 	}
 	public void setName(String name) {
-		this.name = name;
+		this.username = name;
 	}
 	public int getMoney() {
 		return money;

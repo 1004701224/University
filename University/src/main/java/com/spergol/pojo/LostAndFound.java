@@ -8,14 +8,15 @@ public class LostAndFound {
 	private String username;
 	private String userid;
 	private Date time;
-	private int attention;
+	private int attentionnumber;
 	private int telephone;
 	private String name;
 	private Date lftime;
 	private String map;
 	private int flag;
 	private int money;
-	private String image;
+	private String attention;
+	private int school;
 	public int getId() {
 		return id;
 	}
@@ -40,11 +41,11 @@ public class LostAndFound {
 	public void setTime(Date time) {
 		this.time = time;
 	}
-	public int getAttention() {
-		return attention;
+	public int getAttentionnumber() {
+		return attentionnumber;
 	}
-	public void setAttention(int attention) {
-		this.attention = attention;
+	public void setAttentionnumber(int attentionnumber) {
+		this.attentionnumber = attentionnumber;
 	}
 	public int getTelephone() {
 		return telephone;
@@ -82,11 +83,17 @@ public class LostAndFound {
 	public void setMoney(int money) {
 		this.money = money;
 	}
-	public String getImage() {
-		return image;
+	public String getattention() {
+		return attention;
 	}
-	public void setImage(String image) {
-		this.image = image;
+	public void setattention(String attention) {
+		this.attention = attention;
+	}
+	public int getSchool() {
+		return school;
+	}
+	public void setSchool(int school) {
+		this.school = school;
 	}
 	
 	

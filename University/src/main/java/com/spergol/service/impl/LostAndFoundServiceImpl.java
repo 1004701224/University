@@ -1,5 +1,6 @@
 package com.spergol.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -27,9 +28,53 @@ public class LostAndFoundServiceImpl implements LostAndFoundService{
 
 
 	@Override
-	public List<LostAndFound> selLAF() {
+	public List<LostAndFound> selAllLAF() {
 		// TODO 自动生成的方法存根
-		return lostAndFoundMapper.selLAF();
+		return lostAndFoundMapper.selAllLAF();
 	}
+
+
+	@Override
+	public List<LostAndFound> selUserLAF(String userid) {
+		// TODO 自动生成的方法存根
+		return lostAndFoundMapper.selUserLAF(userid);
+	}
+
+
+	@Override
+	public List<LostAndFound> selSchoolLAF(int school) {
+		// TODO 自动生成的方法存根
+		return lostAndFoundMapper.selSchoolLAF(school);
+	}
+
+
+
+	@Override
+	public LostAndFound selLAFById(int id, String userid) {
+		// TODO 自动生成的方法存根
+		return lostAndFoundMapper.selLAFById(id, userid);
+	}
+
+
+	@Override
+	public int addLAF(LostAndFound LAF) {
+		// TODO 自动生成的方法存根
+		return lostAndFoundMapper.addLAF(LAF);
+	}
+
+
+	@Override
+	public int delLAF(int id) {
+		// TODO 自动生成的方法存根
+		return lostAndFoundMapper.delLAF(id);
+	}
+
+
+	@Override
+	public int updLAF(LostAndFound LAF) {
+		// TODO 自动生成的方法存根
+		return lostAndFoundMapper.updLAF(LAF);
+	}
+	
 	
 }

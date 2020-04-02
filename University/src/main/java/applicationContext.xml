@@ -36,24 +36,24 @@
         	<property name="sqlSessionFactory" ref="factory"></property>
         </bean>
         
-        <!--  声明式事务
+        <!--  声明式事务-->
         <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         	<property name="dataSource" ref="dataSource"></property>
         </bean>
         <tx:advice id="tx" transaction-manager="txManager">
         	<tx:attributes>
-        		<tx:method name="select"/>
+        		<tx:method name="sel*" read-only="true" rollback-for="Exception"/>
+        		<tx:method name="add*" read-only="false" rollback-for="Exception"/>
+        		<tx:method name="upd*" read-only="false" rollback-for="Exception"/>
+        		<tx:method name="del*" read-only="false" rollback-for="Exception"/>
         	</tx:attributes>
-        </tx:advice> -->
+        </tx:advice> 
         
-        <!-- aop配置
-        <bean id="before" class="test.advice.BeforeAdvice"></bean>
-        <bean id="after" class="test.advice.AfterAdvice"></bean>
+        <!-- aop配置-->
         <aop:config>
-        	<aop:pointcut expression="execution(* test.service.impl.UserServiceImpl.select(..))" id="pointcut"/>
-        	<aop:advisor advice-ref="before" pointcut-ref="pointcut"/>
-        	<aop:advisor advice-ref="after" pointcut-ref="pointcut"/>
-        </aop:config>-->
+        	<aop:pointcut expression="execution(* com.spergol.service.impl.*.*(..))" id="pointcut"/>
+        	<aop:advisor advice-ref="tx" pointcut-ref="pointcut"/>
+        </aop:config>
         
         
         </beans>

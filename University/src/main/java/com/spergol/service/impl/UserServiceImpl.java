@@ -18,7 +18,7 @@ import com.spergol.service.UserService;
  * 
  * */
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 	@Resource
 	private UserMapper userMapper;
 
@@ -32,34 +32,22 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public User selectUser(String userid) {
+	public User selectUsers(String userid) {
 		// TODO 自动生成的方法存根
 		return userMapper.selectUsers(userid);
 	}
 
 	@Override
-	public int addUsers(String userid, String username, int money) {
+	public int addUsers(String userid, String username, int identify, String classes) {
 		// TODO 自动生成的方法存根
-		return userMapper.addUsers(userid, username, money);
+		return userMapper.addUsers(userid, username, identify, classes);
 	}
 
 	@Override
-	public int updmoney(String userid, int money) {
+	public int updUser(User user) {
 		// TODO 自动生成的方法存根
-		return userMapper.updmoney(userid, money);
+		return userMapper.updUser(user);
 	}
 
-	@Override
-	public int updschool(String userid, int school) {
-		// TODO 自动生成的方法存根
-		return userMapper.updschool(userid, school);
-	}
 
-	@Override
-	public int updusername(String userid, String username) {
-		// TODO 自动生成的方法存根
-		return userMapper.updusername(userid, username);
-	}
-	
-	
 }

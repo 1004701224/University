@@ -14,9 +14,7 @@ public interface UserService {
 	/*
 	 * 命名时请按照规范以sel,add,del,upd开头
 	 * */
-	User selectUser(String id);
-	int addUsers(String userid,String username,int money);
-	int updmoney(String userid,int money);
-	int updschool(String userid,int school);
-	int updusername(String userid,String username);
+	User selectUsers(String userid);
+	int addUsers(String userid,String username,int identify,String classes);
+	int updUser(User user);
 }

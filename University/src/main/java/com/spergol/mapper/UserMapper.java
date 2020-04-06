@@ -3,6 +3,7 @@ package com.spergol.mapper;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
@@ -15,22 +16,13 @@ import com.spergol.pojo.User;
 public interface UserMapper {
 //	用户信息查询
 	@Select("select * from user where userid = #{arg0}")
-	User selectUsers(String id);
+	User selectUsers(String userid);
 	
 //	用户首次登录使用
-	@Insert("insert into user values(#{arg0},#{arg1},#{arg2},default)")
-	int addUsers(String userid,String username,int money);
+	@Insert("insert into user values(#{arg0},#{arg1},#{arg2},#{arg3})")
+	int addUsers(String userid,String username,int identify,String classes);
 	
-//	用户余额修改(以下三个应该可以写成一条)
-	@Update("update user set money = #{arg1} where userid = #{arg0}")
-	int updmoney(String userid,int money);
-	
-//	用户学校修改
-	@Update("update user set school = #{arg1} where userid = #{arg0}")
-	int updschool(String userid,int school);
-	
-//	用户名修改
-	@Update("update user set money = #{arg1} where userid = #{arg0}")
-	int updusername(String userid,String username);
+//	用户信息修改
+	int updUser(User user);
 	
 }

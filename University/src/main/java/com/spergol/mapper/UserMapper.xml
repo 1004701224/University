@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.spergol.mapper.UserMapper">
+  		<update id="updUser" parameterType="com.spergol.pojo.User">
+  			update user
+  			<set>
+  				<if test="classes!=null and classes!=''">
+  					classes = #{classes},
+  				</if>
+  				<if test="username!=null and username!=''">
+  					username = #{username},
+  				</if>
+  				<if test="identify!=null and identify!=''">
+  					identify = #{identify},
+  				</if>
+  			</set>
+  			where userid = #{userid}
+  		</update>
+  </mapper>

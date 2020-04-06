@@ -5,33 +5,41 @@ package com.spergol.pojo;
 //即为从数据库中查出的类型
 
 public class User {
-	private String id;
+	private String userid;
 	private String username;
-	private int money;
-	private int school;
-	public String getId() {
-		return id;
+	private int identify;
+	private String classes;
+
+	public String getUserid() {
+		return userid;
 	}
-	public void setId(String id) {
-		this.id = id;
+
+	public void setUserid(String userid) {
+		this.userid = userid;
 	}
-	public String getName() {
+
+	public String getUsername() {
 		return username;
 	}
-	public void setName(String name) {
-		this.username = name;
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
-	public int getMoney() {
-		return money;
+
+	public int getIdentify() {
+		return identify;
 	}
-	public void setMoney(int money) {
-		this.money = money;
+
+	public void setIdentify(int identify) {
+		this.identify = identify;
 	}
-	public int getSchool() {
-		return school;
+
+	public String getClasses() {
+		return classes;
 	}
-	public void setSchool(int school) {
-		this.school = school;
+
+	public void setClasses(String classes) {
+		this.classes = classes;
 	}
-	
+
 }

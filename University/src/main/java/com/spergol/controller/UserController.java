@@ -88,6 +88,11 @@ public class UserController {
 		User user = UserServiceImpl.selectUsers(userid);
 		if (user != null) {
 			try {
+				if(user.getIdentify() == 1) {
+					req.getSession().setAttribute("flag", 1);
+				}
+				req.getSession().setAttribute("username", user.getUsername());
+				req.getSession().setAttribute("classes", user.getClasses());
 				resp.getWriter().println("用户已存在");
 				resp.getWriter().println("用户名：" + user.getUsername() + "所属院系：" + user.getClasses() + "身份" + user.getIdentify());
 
@@ -100,6 +105,8 @@ public class UserController {
 				if (UserServiceImpl.addUsers(userid, username, identify, classes) > 0) {
 					try {
 						resp.getWriter().print("老师第一次登陆，注册成功！");
+						req.getSession().setAttribute("flag", 1);
+						req.getSession().setAttribute("classes", user.getClasses());
 					} catch (IOException e) {
 						// TODO 自动生成的 catch 块
 						e.printStackTrace();
@@ -115,6 +122,8 @@ public class UserController {
 			}else if (identify == 0) {
 				if (UserServiceImpl.addUsers(userid, username, identify, classes) > 0) {
 					try {
+						req.getSession().setAttribute("username", user.getUsername());
+						req.getSession().setAttribute("classes", user.getClasses());
 						resp.getWriter().print("学生第一次登陆，注册成功！");
 					} catch (IOException e) {
 						// TODO 自动生成的 catch 块
@@ -142,7 +151,7 @@ public class UserController {
 	}
 
 //	用户信息修改，验证成功
-	@RequestMapping("change")
+	@RequestMapping("changeUser")
 	public void change(HttpServletRequest req, HttpServletResponse resp) {
 		try {
 			req.setCharacterEncoding("UTF-8");

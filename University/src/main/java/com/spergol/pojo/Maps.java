@@ -5,7 +5,6 @@ public class Maps {
 	private String name;
 	private double latitude;
 	private double longitude;
-	private int hot;
 	public int getId() {
 		return id;
 	}
@@ -29,12 +28,6 @@ public class Maps {
 	}
 	public void setLongitude(double longitude) {
 		this.longitude = longitude;
-	}
-	public int getHot() {
-		return hot;
-	}
-	public void setHot(int hot) {
-		this.hot = hot;
 	}
 	
 }

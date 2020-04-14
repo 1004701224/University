@@ -32,6 +32,12 @@ public class WordsServiceImpl implements WordsService{
 		// TODO 自动生成的方法存根
 		return wordsMapper.updWords(words);
 	}
+
+	@Override
+	public List<Words> selHot() {
+		// TODO 自动生成的方法存根
+		return wordsMapper.selHot();
+	}
 	
 	
 }

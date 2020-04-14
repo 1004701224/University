@@ -21,7 +21,8 @@ public class ProceduresController {
 
 	@Resource
 	private ProceduresService proceduresServiceImpl;
-
+	private JSONObject json = new JSONObject();
+	
 //	创建信息(本地测试通过)
 	@RequestMapping("add")
 	public void add(HttpServletRequest req, HttpServletResponse resp) {
@@ -51,30 +52,20 @@ public class ProceduresController {
 		System.out.println(latitude + "  " + longitude);
 		if (flag == 1) {
 			if (proceduresServiceImpl.addProcedures(procedures) > 0) {
-				try {
-					resp.getWriter().println("数据写入成功");
-				} catch (IOException e) {
-					// TODO 自动生成的 catch 块
-					e.printStackTrace();
-				}
+				json.put("code", 1);
 			} else {
-				try {
-					resp.getWriter().println("数据写入失败");
-				} catch (IOException e) {
-					// TODO 自动生成的 catch 块
-					e.printStackTrace();
-				}
+				json.put("code", 0);
 			}
 
 		} else {
-			try {
-				resp.getWriter().println("对不起，您没有修改权限");
-			} catch (IOException e) {
-				// TODO 自动生成的 catch 块
-				e.printStackTrace();
-			}
+			json.put("code", -1);
 		}
-
+		try {
+			resp.getWriter().print(json);
+		} catch (IOException e) {
+			// TODO 自动生成的 catch 块
+			e.printStackTrace();
+		}
 	}
 
 //	读取信息(本地测试通过)
@@ -91,7 +82,6 @@ public class ProceduresController {
 		String username = (String) req.getSession().getAttribute("username");
 		String classes = (String) req.getSession().getAttribute("classes");
 		List<Procedures> procedures = proceduresServiceImpl.selProcedures(classes);
-		JSONObject json = new JSONObject();
 		json.put("procedures", procedures);
 		try {
 			resp.getWriter().print(json);
@@ -135,19 +125,15 @@ public class ProceduresController {
 		procedures.setLatitude(latitude);
 		procedures.setLongitude(longitude);
 		if (proceduresServiceImpl.updProcedures(procedures)>0) {
-			try {
-				resp.getWriter().println("修改成功！");
-			} catch (IOException e) {
-				// TODO 自动生成的 catch 块
-				e.printStackTrace();
-			}
+			json.put("code", 1);
 		}else {
-			try {
-				resp.getWriter().println("修改失败！");
-			} catch (IOException e) {
-				// TODO 自动生成的 catch 块
-				e.printStackTrace();
-			}
+			json.put("code", 0);
+		}
+		try {
+			resp.getWriter().print(json);
+		} catch (IOException e) {
+			// TODO 自动生成的 catch 块
+			e.printStackTrace();
 		}
 	}
 
@@ -164,19 +150,15 @@ public class ProceduresController {
 		String userid = (String) req.getSession().getAttribute("userid");
 		int id = Integer.parseInt(req.getParameter("id"));
 		if (proceduresServiceImpl.delProcedures(userid, id)>0) {
-			try {
-				resp.getWriter().print("删除成功！");
-			} catch (IOException e) {
-				// TODO 自动生成的 catch 块
-				e.printStackTrace();
-			}
+			json.put("code", 1);
 		}else {
-			try {
-				resp.getWriter().print("删除失败！");
-			} catch (IOException e) {
-				// TODO 自动生成的 catch 块
-				e.printStackTrace();
-			}
+			json.put("code", 0);
+		}
+		try {
+			resp.getWriter().print(json);
+		} catch (IOException e) {
+			// TODO 自动生成的 catch 块
+			e.printStackTrace();
 		}
 	}
 }

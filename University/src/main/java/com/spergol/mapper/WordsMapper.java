@@ -19,4 +19,8 @@ public interface WordsMapper {
 	
 //	数据修改
 	int updWords(Words words);
+	
+//	热度排序查询
+	@Select("select * from words order by hot desc")
+	List<Words> selHot();
 }

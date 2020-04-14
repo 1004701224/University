@@ -42,13 +42,14 @@ public class UserController {
 
 	@Resource
 	private UserService UserServiceImpl;
+	private JSONObject json = new JSONObject();
 
 //	用户登录注册，验证成功，前端注意设置cookie中userID
 	@RequestMapping("login")
 	private void login(HttpServletRequest req, HttpServletResponse resp) {
 		String code = req.getParameter("code");
-		String appid = req.getParameter("appid");
-		String secret = req.getParameter("secret");
+		String appid = "wxa1b202ae01b354d3";
+		String secret = "c018bc3857e272854e69796662a92d4d";
 		String username = req.getParameter("username");
 		String classes = req.getParameter("classes");
 		int identify = Integer.parseInt(req.getParameter("identify"));
@@ -147,7 +148,15 @@ public class UserController {
 				}
 			}
 		}
-
+		json.put("username", user.getUsername());
+		json.put("classes", user.getClasses());
+		json.put("identify", user.getIdentify());
+		try {
+			resp.getWriter().print(json);
+		} catch (IOException e) {
+			// TODO 自动生成的 catch 块
+			e.printStackTrace();
+		}
 	}
 
 //	用户信息修改，验证成功
@@ -175,10 +184,19 @@ public class UserController {
 		if(UserServiceImpl.updUser(user)>0) {
 			try {
 				resp.getWriter().println("数据修改成功！");
+				json.put("code", 1);
 			} catch (IOException e) {
 				// TODO 自动生成的 catch 块
 				e.printStackTrace();
 			}
+		}else {
+			json.put("code", 0);
+		}
+		try {
+			resp.getWriter().print(json);
+		} catch (IOException e) {
+			// TODO 自动生成的 catch 块
+			e.printStackTrace();
 		}
 	}
 

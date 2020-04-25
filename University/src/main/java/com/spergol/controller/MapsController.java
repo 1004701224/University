@@ -1,6 +1,7 @@
 package com.spergol.controller;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -26,6 +27,13 @@ public class MapsController {
 //	添加地点
 	@RequestMapping("addMaps")
 	public void addMaps(HttpServletRequest req,HttpServletResponse resp) {
+		try {
+			req.setCharacterEncoding("UTF-8");
+		} catch (UnsupportedEncodingException e1) {
+			// TODO 自动生成的 catch 块
+			e1.printStackTrace();
+		}
+		resp.setCharacterEncoding("UTF-8");
 		String name = req.getParameter("name");
 		System.out.println();
 		double latitude = Double.parseDouble(req.getParameter("latitude"));
@@ -36,11 +44,19 @@ public class MapsController {
 //	地点热词查询
 	@RequestMapping("selMaps")
 	public void selMaps(HttpServletRequest req,HttpServletResponse resp) {
+		try {
+			req.setCharacterEncoding("UTF-8");
+		} catch (UnsupportedEncodingException e1) {
+			// TODO 自动生成的 catch 块
+			e1.printStackTrace();
+		}
+		resp.setCharacterEncoding("UTF-8");
 		String words = req.getParameter("words");
 		Maps selMaps = mapsServiceImpl.selMaps(words);
 		json.put("location", selMaps);
 		try {
 			resp.getWriter().print(json);
+			System.out.println(selMaps.toString());
 		} catch (IOException e) {
 			// TODO 自动生成的 catch 块
 			e.printStackTrace();

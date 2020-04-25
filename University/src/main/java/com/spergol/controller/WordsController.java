@@ -49,6 +49,13 @@ public class WordsController {
 //	增加热度(测试通过)
 	@RequestMapping("hot")
 	public void hot(HttpServletRequest req,HttpServletResponse resp) {
+		try {
+			req.setCharacterEncoding("UTF-8");
+		} catch (UnsupportedEncodingException e1) {
+			// TODO 自动生成的 catch 块
+			e1.printStackTrace();
+		}
+		resp.setCharacterEncoding("UTF-8");
 		String name = req.getParameter("name");
 		Words selWord = wordsServiceImpl.selWord(name);
 		if(selWord!=null) {
@@ -74,6 +81,13 @@ public class WordsController {
 	@ResponseBody
 	@RequestMapping("selhot")
 	public void selhot(HttpServletRequest req,HttpServletResponse resp) {
+		try {
+			req.setCharacterEncoding("UTF-8");
+		} catch (UnsupportedEncodingException e1) {
+			// TODO 自动生成的 catch 块
+			e1.printStackTrace();
+		}
+		resp.setCharacterEncoding("UTF-8");
 		List<Words> selHot = wordsServiceImpl.selHot();
 		json.put("selhot", selHot);
 		try {

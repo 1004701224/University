@@ -14,6 +14,6 @@ public interface MapsMapper {
 	int addMaps(String name,double latitude,double longitude);
 	
 //	µÿµ„≤È—Ø
-	@Select("select * from maps where id = (select related from words where name = #{arg0})")
+	@Select("select * from maps where id = (select related from words where words = #{arg0})")
 	Maps selMaps(String name);
 }
